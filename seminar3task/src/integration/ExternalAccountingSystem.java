@@ -14,8 +14,8 @@ public class ExternalAccountingSystem {
     private Sale sale;
     
     /**
-     * 
-     * @param sale 
+     * send sale info to external accounting system to bookkeep.
+     * @param sale sale that is about to end.
      */
     
     public void bookkeep(Sale sale) {

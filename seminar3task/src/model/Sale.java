@@ -59,7 +59,7 @@ public class Sale {
     /**
      * Add an item in the current sale.
      * @param registeredItem the item is to be added to the current sale.
-     * @return the current lastest price and information of the registereditem and the running total of the sale.
+     * @return the current lastest price and information of the registered item and the running total of the sale.
      * 
      */
     public String addItem(ItemDTO registeredItem){
@@ -78,7 +78,7 @@ public class Sale {
     * Add several items in the current sale.
     * @param registeredItem the items are to be added to the current sale.
     * @param quantity the quantity of the items 
-    * @return the current lastest price and information of the registereditem and the running total of the sale.
+    * @return the current lastest price and information of the registered item and the running total of the sale.
     **/
     public String addItems (ItemDTO registeredItem, int quantity){
         if(!itemExists(registeredItem)){

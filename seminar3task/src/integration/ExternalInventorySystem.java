@@ -13,6 +13,11 @@ public class ExternalInventorySystem {
     
     private Sale sale; 
     
+    /**
+     * send sale info to external inventory system to update inventory.
+     * @param sale sale that is about to end.
+     */
+    
     public void updateInventory(Sale sale) {
         this.sale = sale;
     }   

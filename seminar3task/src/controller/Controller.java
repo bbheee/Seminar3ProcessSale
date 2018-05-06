@@ -21,7 +21,9 @@ public class Controller {
     /**
      * Create a new instance.
      * @param regCreator the object responsible for creating the registries.
-     * @param
+     * @param printer the printer
+     * @param accounting external accounting system
+     * @param inventory external inventory system
      **/
             
     public Controller(RegistryCreator regCreator, Printer printer, ExternalAccountingSystem accounting,ExternalInventorySystem inventory){
@@ -33,9 +35,8 @@ public class Controller {
     }
     
     /**
-     * 
-     * @param 
-     * @param
+     * For testing use, create a new instance with only a registry
+     * @param regCreator the object that used for creating registries.
      **/
     public Controller(RegistryCreator regCreator){
         this.itemRegistry = regCreator.getItemRegistry();
@@ -49,8 +50,8 @@ public class Controller {
         sale = new Sale();
     }
     /**
-     * @param itemID is a indentifier of an item that is bought 
-     * @return uppdated sale information
+     * @param itemID is a identifier of an item that is bought 
+     * @return updated sale information
      **/
     public String enterItemID(String itemID) {
         ItemDTO registeredItem = itemRegistry.findItem(itemID);
@@ -65,14 +66,15 @@ public class Controller {
         return sale.addItems(registeredItem,quantity);
     }
     /**
-    * caculate total taxes when all items have been registered
+    * calculate total taxes when all items have been registered.
+    * @return the total amount of taxes of the sale.
     **/
     public double indicateAllItemsRegistered() {
         return sale.caculateTaxes();
     }
      /**
     * @param paidAmount is the cash that customer paid and cashier enter the amount in the system
-    * @return the changes that caculated by system
+    * @return the changes that calculated by system
     **/
     public int enterPaidCash(int paidAmount){
         int changeAmount = sale.caculateChange(paidAmount);
